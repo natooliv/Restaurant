@@ -10,7 +10,7 @@ def test_dish():
     assert bacon_burguer_dish == Dish('Lombo Canadense', 30.0)
     assert repr(bacon_burguer_dish) == "Dish('Lombo Canadense', R$30.00)"
     assert hash(bacon_burguer_dish) == hash(Dish('Lombo Canadense', 30.0))
-    assert hash(bacon_burguer_dish) != hash(Dish('Pizza', 28.0))
+    assert hash(bacon_burguer_dish) != hash(Dish('Marguerita', 28.0))
 
     with pytest.raises(TypeError):
         Dish('Lombo Canadense', '-30')
@@ -23,4 +23,4 @@ def test_dish():
     assert bacon_burguer_dish.get_ingredients() == {bacon_ingredient}
     assert bacon_burguer_dish.get_restrictions() == {
         Restriction.ANIMAL_MEAT, Restriction.ANIMAL_DERIVED
-        } 
+    }
